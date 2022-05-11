@@ -12,6 +12,10 @@ Grid.prototype.minimum = function () {
       }
     }
   }
+  if (result === Infinity) {
+    return 2;
+  }
+  return result;
 };
 
 // Build a grid of the specified size
