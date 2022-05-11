@@ -4,17 +4,16 @@ function Grid(size, previousState) {
 }
 
 Grid.prototype.minimum = function () {
-  var result = null;
+  var result = Infinity;
   for (var x = 0; x < this.size; x++) {
     for (var y = 0; y < this.size; y++) {
       if (this.cells[x][y] !== null) {
-        if (result === null) result = this.cells[x][y].value;
-        else result = Math.min(result, this.cells[x][y].value);
+        result = Math.min(result, this.cells[x][y].value);
       }
     }
   }
-  if (result === null) {
-    return 2;
+  if (result === Infinity) {
+    return 1;
   }
   return result;
 };
