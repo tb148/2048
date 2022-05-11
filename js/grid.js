@@ -7,7 +7,9 @@ Grid.prototype.minimum = function () {
   var result = Infinity;
   for (var x = 0; x < this.size; x++) {
     for (var y = 0; y < this.size; y++) {
-      result = Math.min(result, this.cells[x][y].value);
+      if (this.cells[x][y] !== null) {
+        result = Math.min(result, this.cells[x][y].value);
+      }
     }
   }
 };
